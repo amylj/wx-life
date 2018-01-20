@@ -1,0 +1,86 @@
+<!--pages/show/show.wxml-->
+<view class="TableGet">
+   <!-- <view class="TabButton">
+    <button bindtap="Bill" style="background:#9170D9;color:#FFFFFE;" hover-class="other-button-hover" class="income"> 账单 </button>
+  </view> -->
+
+
+<view class="bottomBar" style="display:flex;">
+    
+    <navigator url="../../../pages/expense/statistics/statistics" redirect>
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/searchSelected.png"></image></view>
+            <view><text style="font-size:10pt; color:#006633">记账</text></view>
+        </view>
+    </navigator>
+
+   <navigator url="../../../pages/expense/charts/charts" redirect>
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/searchSelected.png"></image></view>
+            <view><text style="font-size:10pt; color:#006633">统计</text></view>
+        </view>
+    </navigator>
+
+    <navigator url="../../../pages/expense/show/show" open-type="switchTab">
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/index.png"></image></view>
+            <view><text style="font-size:10pt;" >账单</text></view>
+        </view>
+    </navigator>
+    </view>
+
+
+
+
+
+
+  <view class="container" style="display:{{BillDisplay}}">
+    <view class="container-user">
+      <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+        <!--<text class="userinfo-nickname">{{username}}</text>-->
+      </view>
+
+      
+
+      <view class="MoneyMessage">
+          <view class="MoneyMessage-ul">
+                <view class="MoneyMessage-li01">
+                  <view>{{incomes}}</view>
+                  <text>本月收入</text>
+                </view>
+                <view class="MoneyMessage-li02"></view>
+                <view class="MoneyMessage-li03">
+                  <view>{{pay}}</view>
+                  <text>本月支出</text>
+                </view>
+          </view>  
+      </view>
+    </view>
+
+
+       <!--定义模板-->
+      <template name="items">
+        <navigator url="../../pages/detail/detail?id={{id}}" hover-class="navigator-hover">
+      <!-- <view wx:for="{{newsList}}" class="list" wx:for-item="itemName"> -->
+          <view class="Stats" >
+            <view class="StatsTime">{{time}}</view>
+            <view class="StatsStats">收入:{{month_income}} 支出:{{month_pay}}</view>
+          </view>
+              <view class="imgs" wx:for="{{array}}" wx:for-item="item">
+                <view class="imgs-text"><image class="in-img" src="{{item.month_img}}" background-size="cover"></image></view>
+                <view class="imgs-text"><text class="imgs-test01">{{item.month_name}}</text><text class="imgs-test02">{{item.month_desc}}</text></view>
+                <view class="imgs-text money">{{item.month_money}}</view>
+              </view>
+        <!-- </view> -->
+        </navigator>
+      </template>
+
+      <!--循环输出列表 begin-->
+      <view wx:for="{{newsList}}" class="list">
+         <template is="items" data="{{...item}}"/>
+      </view>
+      <!--循环输出列表 end-->
+  </view>
+  <view class="container01" style="display:{{AccountBookDisplay}};"></view>
+</view>

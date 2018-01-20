@@ -1,0 +1,49 @@
+page{
+  background-color: white;
+}
+.newNotePad{
+  height: 30px;
+  text-align: right;
+  background-color: lightgreen;
+  padding-right: 5px;
+}
+.alert{
+  color: white;
+  background-color: darkred;
+  border: 1px solid red;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+.title{
+  background-color: white;
+  border: 1px solid limegreen;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.content{
+  background-color: white;
+  border: 1px solid limegreen;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.btnNote{
+  display: block;
+  
+}
+.display_none{
+  display: none;
+}
+.display{
+  display: block;
+  text-align: center;  
+}
+.bottomBar{
+  position: relative;
+  bottom: 10px;
+ 
+  padding-top:20px;
+}

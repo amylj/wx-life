@@ -1,0 +1,34 @@
+
+<view class="bottomBar" style="display:flex;">
+    
+    <navigator url="../../../pages/expense/statistics/statistics" redirect>
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/searchSelected.png"></image></view>
+            <view><text style="font-size:10pt; color:#006633">记账</text></view>
+        </view>
+    </navigator>
+
+   <navigator url="../../../pages/expense/charts/charts" redirect>
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/searchSelected.png"></image></view>
+            <view><text style="font-size:10pt; color:#006633">统计</text></view>
+        </view>
+    </navigator>
+
+    <navigator url="../../../pages/expense/show/show" open-type="switchTab">
+        <view style="text-align:center; width:{{tabWidth}}px;">
+            <view><image style="width:25px; height:25px;" src="../../../pages/images/index.png"></image></view>
+            <view><text style="font-size:10pt;" >账单</text></view>
+        </view>
+    </navigator>
+    </view>
+
+
+
+<view class="container">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+</view>
+
+<view>
+  <button class="btn_yzm" catchtap="getYzm" disabled="{{yzmDisabled}}"><text>本月支出统计图</text></button>
+</view>

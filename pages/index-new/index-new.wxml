@@ -1,0 +1,38 @@
+<view class='bottomBar' style='display:flex;'>
+ <navigator url='../../pages/index/index' redirect>
+  <view style='text-align:center;width:{{tabWidth}}px'>
+    <view><image style='width:25px;height:25px;' src='../images/writeSelected.png'></image></view>     
+    <view><text style='font-size:10pt;color:lightgreen'>记录日程</text></view>
+ </view>
+ </navigator>
+<navigator url="../../pages/checkNote/checkNote" redirect>
+        <view style="text-align:center; width:{{tabWidth}}px;" >
+            <view><image style="width:25px; height:25px;" src="../../pages/images/search.png"></image></view>
+            <view><text style="font-size:10pt;color:lightgreen">查看日程</text></view>
+        </view>
+    </navigator>
+</view>
+
+<view class="newNotePad">
+<image style='width:30px;height:30px;float:left;margin-left:10px;' src='../images/delete.png' bindtap='deleteNotePad'></image>
+<image style='width:30px;height:30px;float:right;margin-right:10px;background-color:lightgreen;' src='../images/new.png' bindtap='newNote'></image>
+</view>
+
+<view class='alert' style='display:{{alertDisplay}}'>标题或内容不能为空！</view>
+<form bindsubmit='noteSubmit' bindreset='noteReset'>
+  <view class="title"  style="opacity:{{titleBorderOpacity}}">
+        <input style="opacity:{{titleInputOpacity}}" name="title" type="text" value="{{titleValue}}" disabled="{{titleDisabled}}" 
+        placeholder="标题（包括标点符号18个字以内）" maxlength="18" bindfocus="titleInputBindfocus"></input>
+    </view>
+    <view class="content" style="opacity:{{contentBorderOpacity}};">
+        <textarea style="opacity:{{contentTextAreaOpacity}};height:{{contentTextAreaHeight}}px;" name="content" value="{{contentValue}}" 
+        disabled="{{contentDisabled}}" placeholder="内容（包括标点符号140个字以内）" bindfocus="contentTextareaBindfocus"></textarea>
+    </view>
+    <view class="btnNote {{display_new?'display':'display_none'}}">
+        <view style="border:1px solid green;border-radius: 4px; width:96%; margin-left: 2%; opacity:{{btnSaveBorderOpacity}} ">
+            <button style="background-color:green;height:40px;line-height:40px; color:white; " disabled="{{saveBtnDisabled}}" 
+            formType="submit" bindtap="saveNotePad">{{btnTxt}}</button>
+        </view>     
+    </view>
+    
+</form>

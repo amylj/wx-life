@@ -1,0 +1,43 @@
+page{
+  background-color: white;
+}
+.body{
+  overflow: hidden;
+}
+.checkNotePad{
+  display: flex;
+  height: 60px;
+  border-top: 1px solid gainsboro;
+  color: black;
+  margin: 5px;
+  padding-top:6px;
+  background-color: white;
+}
+.title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11pt;
+}
+.titleTxt{
+  height: 50%;
+  padding-top:5px;
+}
+.updateDate{
+  margin-top:10px;
+  font-size: 10pt;
+  color: gray;
+}
+.pic{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top:20px;
+  margin-right: 10px;
+}
+.bottomBar{
+  position: relative;
+  bottom: 10px;
+  border-top: 1px solid black;
+  padding-top:10px;
+  height: 45px;
+}
